@@ -1,0 +1,197 @@
+<!DOCTYPE html><html><head>
+	<title>Formulaire de collecte d&#39;informations</title>
+	<style type="text/css">body {
+			background-color: #FFFFFF; /* Couleur de fond blanc */
+			color: #333333;
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+			line-height: 1.5;
+			margin: 0;
+			padding: 0;
+		}
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+		}
+		.form {
+			background-color: #FFFFFF;
+			padding: 40px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.1);
+			width: 50%;
+			max-width: 500px;
+			text-align: center;
+		}
+		h1 {
+			color: #FF8C00; /* Couleur orange foncée pour le titre */
+			font-size: 24px;
+			font-weight: normal;
+			margin-bottom: 20px;
+			margin-top: 0;
+			text-align: center;
+		}
+		label {
+			display: block;
+			font-size: 16px;
+			font-weight: bold;
+			margin-bottom: 10px;
+			text-align: left;
+		}
+		input[type="text"],
+		input[type="email"],
+		input[type="date"],
+		input[type="tel"] {
+			background-color: #FFFFFF;
+			border: 2px solid #CCCCCC;
+			border-radius: 4px;
+			color: #333333;
+			font-size: 16px;
+			margin-bottom: 20px;
+			padding: 10px;
+			width: 100%;
+			box-sizing: border-box; /* Inclure la taille de la bordure et du remplissage dans la largeur */
+		}
+		input[type="submit"],
+        button {
+			background-color: #FF8C00; /* Couleur orange foncée pour le bouton */
+			border: none;
+			border-radius: 4px;
+			color: #FFFFFF;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: bold;
+			margin-top: 20px;
+			padding: 10px;
+			text-align: center;
+			width: 100%;
+		}
+		input[type="submit"]:hover,
+        button:hover {
+			background-color: #FFA500; /* Couleur orange plus claire au survol */
+		}
+	</style>
+
+    <style>
+      .form-container {
+        display: none;
+      }
+      .form-container.active {
+        display: block;
+      }
+    </style>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const button1 = document.getElementById('button1');
+        const button2 = document.getElementById('button2');
+        const form1 = document.getElementById('form1');
+        const form2 = document.getElementById('form2');
+        const nom1 = document.getElementById('nom1');
+        const prenom1 = document.getElementById('prenom1');
+        const email1 = document.getElementById('email1');
+        const tel1 = document.getElementById('tel1');
+        const prenom2 = document.getElementById('prenom2');
+        const nom2 = document.getElementById('nom2');
+        const tel2 = document.getElementById('tel2');
+
+
+
+
+        button1.addEventListener('click', () => {
+          form1.classList.toggle('active');
+          form2.classList.remove('active');
+          nom1.required = form1.classList.contains('active');
+          prenom1.required = form1.classList.contains('active');
+          email1.required = form1.classList.contains('active');
+          tel1.required = form1.classList.contains('active');
+          age1.required = form1.classList.contains('active');
+          nom2.required = false;
+          prenom2.required = false;
+          email2.required = false;;
+          tel2.required = false;
+          age2.required = false;
+                  });
+
+        button2.addEventListener('click', () => {
+          form2.classList.toggle('active');
+          form1.classList.remove('active');
+          nom1.required = false;
+          prenom1.required = false;
+          email1.required = false;
+          tel1.required = false;
+          age1.required = false;
+          nom2.required = form2.classList.contains('active');
+          prenom2.required = form2.classList.contains('active');
+          email2.required = form2.classList.contains('active');
+          tel2.required = form2.classList.contains('active');
+          age2.required = form2.classList.contains('active');
+        });
+      });
+    </script>
+
+</head>
+<body>
+<div class="container">
+<form action="" class="form" method="POST">
+<h1>Formulaire d&#39;inscription</h1>
+
+<p>Veuillez remplir le formulaire ci-dessous :</p>
+
+    <button id="button1">Je suis client chez Orange</button>
+    <button id="button2">Je ne suis pas client chez Orange</button>
+
+    <div id="form1" class="form-container">
+      
+        <label for="nom1">Nom :</label>
+        <input type="text" name="nom" id="nom1" required=""/><br/>
+
+        <label for="prenom1">Prénom :</label>
+        <input type="text" name="prenom" id="prenom1" required=""/><br/>
+
+        <label for="tel1">Numéro de téléphone :</label>
+        <input type="text" name="tel" id="tel1" required=""/><br/>
+
+        <label for="email1">E-mail :</label>
+        <input type="email" name="email" id="email1" required=""/><br/>
+
+        <label for="age">Date de naissance :</label>
+        <input type="date" id="age1" name="age1" required=""/>
+
+
+        <button type="submit">Envoyer</button>
+      <p>En cliquant sur &#34;Envoyer&#34;, vous acceptez nos conditions générales de vente.</p>
+<a download="" href="https://orange.enquete.store/static/CGV-Orange.docx">Lire nos conditions générales de vente.</a>
+
+<p>Une fois vos données envoyer vous serez automatiquement rediriger vers notre portail d&#39;accueil.</p>
+
+
+</div>
+
+    <div id="form2" class="form-container">
+      
+        <label for="nom">Nom :</label>
+        <input type="text" name="nom" id="nom2" required=""/><br/>
+
+        <label for="prenom">Prénom :</label>
+        <input type="text" name="prenom" id="prenom2" required=""/><br/>
+
+        <label for="tel">Numéro de téléphone :</label>
+        <input type="text" name="tel" id="tel2" required=""/><br/>
+
+        <label for="email">E-mail :</label>
+        <input type="email" name="email" id="email2" required=""/><br/>
+
+        <label for="age">Date de naissance :</label>
+        <input type="date" id="age2" name="age2" required=""/>
+
+        <button type="submit">Envoyer</button>
+      <p>En cliquant sur &#34;Envoyer&#34;, vous acceptez nos conditions générales de vente.</p>
+<a download="CGV_Orange.docx" href="https://orange.enquete.store/static/CGV-Orange.docx" target="_blank">Lire nos conditions générales de vente.</a>
+
+<p>Une fois vos données envoyer vous serez automatiquement rediriger vers notre portail d&#39;accueil.</p>
+
+
+</div>
+
+</form></div></body></html>
