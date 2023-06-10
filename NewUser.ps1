@@ -1,10 +1,3 @@
-﻿#Récupération de la date pour créer le mdp
-$jour = (get-date).day
-$mois = Get-Date -Format MMMM
-$annee = (get-date).Year
-      $TextInfo = (Get-Culture).TextInfo
-$Mois=$TextInfo.ToTitleCase($mois)
-
 #Récupération des informations du compte à créer
 "Nom : "
 $Nom=Read-Host
@@ -18,14 +11,9 @@ $NomSansEspace=$Nom -replace " ",""
 $Prenom=Read-Host
 
 
-#Si la date n'a qu'un chiffre, on ajoute un 0
-if ($jour -le 9){
-$mdp="0"+"$jour"+"$mois"+"$annee"+"!"
-}
 
-else {
-$mdp="$jour"+"$mois"+"$annee"+"!"
-}
+
+$mdp="bleu"
 
 $mdpSecure= ConvertTo-SecureString $mdp -AsPlainText -Force
 #credential = New-Object System.Management.Automation.PSCredential ('$Initial$Initial2$NomSansEspace', $mdpSecure)
@@ -44,21 +32,21 @@ $Check=0
 While ($Check -ne 1){
     "Saissisez le numéro du site où l'on doit lier le compte :"
     ""
-    "1) Chantilly"
-    "2) Mecs Les Talents"
-    "3) Deux Marie"
-    "4) Foyer Logement"
-    "5) HDJ"
-    "6) Ilots Bebes"
-    "7) La Guette"
-    "8) Meaux"
-    "9) Montreuil"
-    "10) Mrg"
-    "11) Nogent"
-    "12) Répit"
-    "13) Siege"
-    "14) Uss"
-    "15) Ussd"
+    "1) XXXX"
+    "2)  XXXX"
+    "3)  XXXX"
+    "4)  XXXX"
+    "5)  XXXX"
+    "6)  XXXX"
+    "7)  XXXX"
+    "8)  XXXX"
+    "9)  XXXX"
+    "10)  XXXX"
+    "11)  XXXX"
+    "12)  XXXX"
+    "13)  XXXX"
+    "14)  XXXX"
+    "15)  XXXX"
     ""
 
     $Site=Read-Host
@@ -66,35 +54,35 @@ While ($Check -ne 1){
 
     switch ($Site)
     {
-        1 {$Site="Chantilly"}
+        1 {$Site=" XXXX"}
         1 {$Check=1}
-        2 {$Site="Cor-sje"}
+        2 {$Site=" XXXX"}
         2 {$Check=1}
-        3 {$Site="Deux Marie"}
+        3 {$Site=" XXXX"}
         3 {$Check=1}
-        4 {$Site="Foyer Logement"}
+        4 {$Site=" XXXX"}
         4 {$Check=1}
         5 {$Site="HDJ"}
         5 {$Check=1}
-        6 {$Site="Ilot Bebes"}
+        6 {$Site=" XXXX"}
         6 {$Check=1}
-        7 {$Site="La Guette"}
+        7 {$Site=" XXXX"}
         7 {$Check=1}
-        8 {$Site="Meaux"}
+        8 {$Site=" XXXX"}
         8 {$Check=1}
-        9 {$Site="Montreuil"}
+        9 {$Site=" XXXX"}
         9 {$Check=1}
-        10 {$Site="MRG"}
+        10 {$Site=" XXXX"}
         10 {$Check=1}
-        11 {$Site="Nogent"}
+        11 {$Site=" XXXX"}
         11 {$Check=1}
-        12 {$Site="Répit"}
+        12 {$Site=" XXXX"}
         12 {$Check=1}
-        13 {$Site="Siege"}
+        13 {$Site=" XXXX"}
         13 {$Check=1}
-        14 {$Site="USS"}
+        14 {$Site=" XXXX"}
         14 {$Check=1}
-        15 {$Site="Ussd"}
+        15 {$Site=" XXXX"}
         15 {$Check=1}
     
     }
